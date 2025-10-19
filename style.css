@@ -1,0 +1,93 @@
+/* Reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+/* Animated gradient background */
+.background {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle at 25% 25%, #111 25%, #000 100%);
+  background-size: 400% 400%;
+  animation: moveBackground 15s ease infinite;
+  z-index: 0;
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Comment box styling */
+.container {
+  position: relative;
+  z-index: 2;
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  padding: 30px;
+  width: 320px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Inputs and button */
+input, textarea, button {
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  background: #111;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+button {
+  background: linear-gradient(90deg, #ff0080, #ff8c00);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Message text */
+#message {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #0f0;
+}
